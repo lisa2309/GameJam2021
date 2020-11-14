@@ -15,10 +15,11 @@ public class Movement : MonoBehaviour
     public bool dauerHuepfen;
     public float rechtsLinksVertauschen; //1 == normal oder -1 == vertauscht
     public float Geschwindigkeit;
-    public bool frozen = false; 
+    public bool frozen = false;
     //buffs ende
     public Rigidbody2D rb2d;
     public bool Cground = false;
+    private float wait = 0;
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Movement : MonoBehaviour
             animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
             animator.SetBool("Jump", !Cground);
 
-            if (Input.GetButtonDown("Jump") )
+            if (Input.GetButtonDown("Jump"))
             {
                 Jump();
             }
@@ -48,27 +49,23 @@ public class Movement : MonoBehaviour
         {
             frozen = true;
             animator.SetBool("Frozen", true);
-            float timeLeft = 50000.0F;
-            while (timeLeft > 0)
-            {
-                timeLeft -= Time.deltaTime;
-
-
-                rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
-                rb2d.constraints = RigidbodyConstraints2D.FreezePositionY;
-                //rb2d.gameObject.SetActive(false);
-            }
-            rb2d.constraints = RigidbodyConstraints2D.None;
-            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
-            frozen = false;
-            animator.SetBool("Frozen", false);
-        } /*else
+            wait = 10.0f;
+        }
+        else
         {
-            animator.SetBool("Frozen", false);
-            frozen = false;
-            
-        }*/
-        if (Input.GetKey(KeyCode.Escape))
+            if (wait < 0)
+            {
+                wait = 0;
+                animator.SetBool("Frozen", false);
+                frozen = false;
+            }
+            else if (wait > 0)
+            {
+                wait -= Time.deltaTime;
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenü");
         }
