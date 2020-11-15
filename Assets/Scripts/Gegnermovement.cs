@@ -18,9 +18,9 @@ public class Gegnermovement : MonoBehaviour
         movement.x -=  0.005f;
 
 
-        transform.position = movement;
+        transform.position = new Vector3(movement.x, transform.position.y, transform.position.z);
 
-  
+
 
 
     }
