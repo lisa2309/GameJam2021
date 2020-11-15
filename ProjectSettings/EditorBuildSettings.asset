@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 104b0d14871d44f4881963af94f49350
+  - enabled: 1
+    path: Assets/Scenes/MushroomScene.unity
+    guid: 1a98ab2c58a1edc47913fed8165e7e44
   m_configObjects: {}
