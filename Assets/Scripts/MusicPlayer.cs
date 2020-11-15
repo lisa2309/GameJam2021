@@ -6,12 +6,12 @@ public class MusicPlayer : MonoBehaviour
 {
 
     public AudioSource AudioSource;
-    private float musicVolume = 1f;
+    public static float musicVolume = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        AudioSource.Play();   
+        AudioSource.Play();
     }
 
     // Update is called once per frame
@@ -20,18 +20,15 @@ public class MusicPlayer : MonoBehaviour
         //leiser
         if (Input.GetKey(KeyCode.O))
         {
-            musicVolume -= 0.05f;
+            musicVolume -= 0.03f;
         }
+
         //lauter
         if (Input.GetKey(KeyCode.P))
         {
-            musicVolume += 0.05f; 
+            musicVolume += 0.03f; 
         }
         AudioSource.volume = musicVolume;
     }
 
-    public void updateVolume(float volume)
-    {
-        musicVolume = volume;
-    }
 }
