@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public float rechtsLinksVertauschen; //1 == normal oder -1 == vertauscht
     public float Geschwindigkeit;
     public bool frozen = false;
+    public bool frozenskill = false;
     //buffs ende
     public Rigidbody2D rb2d;
     public bool Cground = false;
@@ -45,7 +46,7 @@ public class Movement : MonoBehaviour
             Vector3 movement = new Vector3((Input.GetAxis("Horizontal") * rechtsLinksVertauschen), 0f, 0f);
             transform.position += movement * Time.deltaTime * Geschwindigkeit;
         }
-        if (Input.GetKeyUp("x"))
+        if (Input.GetKeyUp("x")&&frozenskill == true)
         {
             frozen = true;
             animator.SetBool("Frozen", true);
