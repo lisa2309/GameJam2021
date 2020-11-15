@@ -20,7 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbc765ab-425a-4987-a184-8426594dff88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/MushroomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/MushroomScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,13 +66,14 @@
       <option name="presentableId" value="Default" />
       <updated>1605432900561</updated>
       <workItem from="1605432908051" duration="2968000" />
+      <workItem from="1605444273275" duration="14000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -84,6 +85,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
