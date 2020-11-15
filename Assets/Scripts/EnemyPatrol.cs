@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyPatrol : MonoBehaviour
@@ -12,6 +12,7 @@ public class EnemyPatrol : MonoBehaviour
 
     public bool _moveRight = true;
     public Animator animator;
+    private bool flip = false;
 
     // Use this for initialization
     public void Awake()
@@ -29,7 +30,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (_moveRight)
         {
-            animator.SetBool("right", true);
+            
             enemyRigidBody2D.AddForce(Vector2.right * EnemySpeed * Time.deltaTime);
             if (!_isFacingRight)
                 Flip();
@@ -40,7 +41,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (!_moveRight)
         {
-            animator.SetBool("right", false);
+            
             enemyRigidBody2D.AddForce(-Vector2.right * EnemySpeed * Time.deltaTime);
             if (_isFacingRight)
                 Flip();
@@ -55,6 +56,14 @@ public class EnemyPatrol : MonoBehaviour
     {
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         _isFacingRight = transform.localScale.x > 0;
+        if (flip == false)
+        {
+            animator.SetBool("right", true);
+        }
+        else
+        {
+            animator.SetBool("right", false);
+        }
     }
 
 }
