@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     public float rechtsLinksVertauschen; //1 == normal oder -1 == vertauscht
     public float Geschwindigkeit;
     public bool frozen = false;
-    public bool frozenskill = false;
+    public bool frozenskill;
     //buffs ende
     public Rigidbody2D rb2d;
     public bool Cground = false;
