@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class Gegnermovement : MonoBehaviour
 {
 
+ 
     public bool Cground = false;
     Vector3 movement;
+  
 
     void Start()
     {
@@ -18,9 +20,9 @@ public class Gegnermovement : MonoBehaviour
         movement.x -=  0.005f;
 
 
-        transform.position = movement;
+        transform.position = new Vector3(movement.x, transform.position.y, transform.position.z);
 
-  
+
 
 
     }
@@ -33,7 +35,13 @@ public class Gegnermovement : MonoBehaviour
     {
         if (other.collider.tag == "Player")
         {
-            SceneManager.LoadScene("SampleScene");
+           
+          
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+               
+
+          
+            
         }
     }
 }
