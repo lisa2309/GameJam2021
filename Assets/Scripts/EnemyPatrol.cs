@@ -11,7 +11,7 @@ public class EnemyPatrol : MonoBehaviour
     private float _endPos;
 
     public bool _moveRight = true;
-
+    public Animator animator;
 
     // Use this for initialization
     public void Awake()
@@ -29,6 +29,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (_moveRight)
         {
+            animator.SetBool("right", true);
             enemyRigidBody2D.AddForce(Vector2.right * EnemySpeed * Time.deltaTime);
             if (!_isFacingRight)
                 Flip();
@@ -39,6 +40,7 @@ public class EnemyPatrol : MonoBehaviour
 
         if (!_moveRight)
         {
+            animator.SetBool("right", false);
             enemyRigidBody2D.AddForce(-Vector2.right * EnemySpeed * Time.deltaTime);
             if (_isFacingRight)
                 Flip();
